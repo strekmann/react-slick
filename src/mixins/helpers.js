@@ -58,6 +58,7 @@ var helpers = {
       var trackStyle = getTrackCSS(assign({left: targetLeft}, props, this.state));
 
       this.setState({trackStyle: trackStyle});
+      this.slideHandler(props.initialSlide);
     });
   },
   getWidth: function getWidth(elem) {
