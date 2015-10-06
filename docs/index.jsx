@@ -1,9 +1,10 @@
 'use strict';
 
 var React = require('react');
-var ReactDOM = require('react-dom');
-var Docs = require('./docs');
+var Router = require('react-router');
+var routes = require('./routes');
 
-React.initializeTouchEvents && React.initializeTouchEvents(true);
-React.render(<Docs />, document.getElementById('rapp'));
-
+React.initializeTouchEvents(true);
+Router.run(routes, Router.HistoryLocation, function (Handler) {
+  React.render(<Handler />, document.getElementById('rapp'));
+});
